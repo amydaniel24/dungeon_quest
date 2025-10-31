@@ -16,8 +16,18 @@ def main():
             {'name': 'Ailene', 'health': 10, 'inventory': []}
         """
         # TODO: Ask the user for their name using input()
+        name = input("Enter your name: ").strip() or "Adventurer"
+
         # TODO: Initialize a dictionary with keys: "name", "health", and "inventory"
+        player = {
+            "name": name,
+            "health": 10,
+            "inventory": []
+        }
+
         # TODO: Return the dictionary
+        return player
+
 
 
     def create_treasures():
