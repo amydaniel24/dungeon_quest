@@ -27,6 +27,7 @@ def main():
 
         # TODO: Return the dictionary
         return player
+    
 
 
 
@@ -36,7 +37,7 @@ def main():
 
         Returns:
             dict: Example:
-                {
+                 {
                     "gold coin": 5,
                     "ruby": 10,
                     "ancient scroll": 7,
@@ -47,6 +48,14 @@ def main():
             You can customize treasures or randomize the values using random.randint(3, 12).
         """
         # TODO: Create a dictionary of treasure names and integer values
+
+          {
+                    "a gold pocket watch with the initials D.A.": 5,
+                    "a gaudy gold ring studded with diamonds with a faint magic aura, it causes memory loss, with previous day's events forgotten": 10,
+                    "a diary of a teenaged girl. Contains much gossip.": 7,
+                    "An under tensioned spring": 9,
+                    "a photograph of a cat": 4
+                }
         # TODO: Return the dictionary
 
 
