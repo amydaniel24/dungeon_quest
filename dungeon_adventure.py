@@ -104,22 +104,22 @@ def main():
         # TODO: Update player dictionary accordingly
         # TODO: Print messages describing what happened
 
-def search_room(player, treasures):
+    def search_room(player, treasures):
 
-    outcome = random.choice(["treasure", "trap"])
+        outcome = random.choice(["treasure", "trap"])
 
-    if outcome == "treasure":
+        if outcome == "treasure":
             found = random.choice(list(treasures.keys()))
             player["inventory"].append(found)
             print(f"\nYou found a **{found}**! (+{treasures[found]} value)")
-    else:
+        else:
             # trap
             player["health"] = max(0, player["health"] - 2)
             print("\nOh no! You found a trap and lost 2 health!")
             if player["health"] == 0:
                 print("Ouch, I hope no one's watching you play . . .")
 
-def check_status(player):
+    def check_status(player):
         """
         Displays the player’s current health and inventory.
 
@@ -137,7 +137,7 @@ def check_status(player):
         # TODO: If the inventory list is not empty, print items joined by commas
         # TODO: Otherwise print “You have no items yet.”
 
-def check_status(player):
+    def check_status(player):
        
         print("\n=== Status ===")
         print(f"Health: {player['health']}")
@@ -146,7 +146,7 @@ def check_status(player):
         else:
             print("Inventory: You have no items yet.")
     
-def end_game(player, treasures):
+    def end_game(player, treasures):
         """
         Ends the game and displays a summary.
 
@@ -161,7 +161,7 @@ def end_game(player, treasures):
         # TODO: Print final health, items, and total value
         # TODO: End with a message like "Game Over! Thanks for playing."
 
-def end_game(player, treasures):
+    def end_game(player, treasures):
        
         total_value = sum(treasures.get(item, 0) for item in player["inventory"])
 
@@ -181,7 +181,7 @@ def end_game(player, treasures):
         print("My God, Adventurer! That was pure madness! I don't know what to say; get out of there, the mission's over!")
 
 
-def run_game_loop(player, treasures):
+    def run_game_loop(player, treasures):
         """
         Main game loop that manages the rooms and player decisions.
 
@@ -204,7 +204,7 @@ def run_game_loop(player, treasures):
         # TODO: Break or return appropriately when player quits or dies
         # TODO: Call end_game() after all rooms are explored
 
-def run_game_loop(player, treasures):
+    def run_game_loop(player, treasures):
         """
         Main game loop that manages the rooms and player decisions.
 
@@ -220,7 +220,7 @@ def run_game_loop(player, treasures):
         room_count = 5
         room_number = 1
 
-        print(f"\nWelcome, {player['name']}! Your adventure begins...")
+        print(f"\nWelcome, {player['name']}! So it begins...")
 
        
         while room_number <= room_count:
