@@ -156,8 +156,27 @@ def end_game(player, treasures):
         # TODO: Print final health, items, and total value
         # TODO: End with a message like "Game Over! Thanks for playing."
 
+def end_game(player, treasures):
+       
+        total_value = sum(treasures.get(item, 0) for item in player["inventory"])
 
-    def run_game_loop(player, treasures):
+        print("\n" + "=" * 40)
+        print("              GAME SUMMARY")
+        print("=" * 40)
+        print(f"Adventurer: {player['name']}")
+        print(f"Final Health: {player['health']}")
+        if player["inventory"]:
+            print("Collected Treasures:")
+            for item in player["inventory"]:
+                print(f" - {item} (+{treasures.get(item, 0)})")
+        else:
+            print("Collected Treasures: (none)")
+        print(f"Total Treasure Value: {total_value}")
+        print("=" * 40)
+        print("My God, Adventurer! That was pure madness! I don't know what to say; get out of there, the mission's over!")
+
+
+def run_game_loop(player, treasures):
         """
         Main game loop that manages the rooms and player decisions.
 
