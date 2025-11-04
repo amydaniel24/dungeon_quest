@@ -74,13 +74,13 @@ def main():
             4. Quit the game
         """
         # TODO: Print the room number and the 4 menu options listed above
-    print("\n" + "-" * 40)
-    print(f"You are in room {room_number}.")
-    print("What would you like to do?")
-    print("1. Search for treasure")
-    print("2. Move to next room")
-    print("3. Check health and inventory")
-    print("4. Quit the game")
+        print("\n" + "-" * 40)
+        print(f"You are in room {room_number}.")
+        print("What would you like to do?")
+        print("1. Search for treasure")
+        print("2. Move to next room")
+        print("3. Check health and inventory")
+        print("4. Quit the game")
 
     def search_room(player, treasures):
         """
@@ -259,7 +259,7 @@ def main():
             if player["health"] <= 0:
                 break
 
-        # Finished game
+        # Game over
         if room_number > room_count:
             print("\nSo, it ends!.......")
         end_game(player, treasures)
@@ -268,9 +268,10 @@ def main():
     # -----------------------------------------------------
     # GAME ENTRY POINT (Leave this section unchanged)
     # -----------------------------------------------------
-player = setup_player()
-treasures = create_treasures()
-run_game_loop(player, treasures)
+    def main():
+        player = setup_player()
+    treasures = create_treasures()
+    run_game_loop(player, treasures)
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+        main()
