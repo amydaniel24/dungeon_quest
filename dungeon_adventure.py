@@ -132,8 +132,16 @@ def check_status(player):
         # TODO: If the inventory list is not empty, print items joined by commas
         # TODO: Otherwise print “You have no items yet.”
 
-
-    def end_game(player, treasures):
+def check_status(player):
+       
+        print("\n=== Status ===")
+        print(f"Health: {player['health']}")
+        if player["inventory"]:
+            print("Inventory:", ", ".join(player["inventory"]))
+        else:
+            print("Inventory: You have no items yet.")
+    
+def end_game(player, treasures):
         """
         Ends the game and displays a summary.
 
