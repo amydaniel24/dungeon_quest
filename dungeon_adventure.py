@@ -199,13 +199,73 @@ def run_game_loop(player, treasures):
         # TODO: Break or return appropriately when player quits or dies
         # TODO: Call end_game() after all rooms are explored
 
+def run_game_loop(player, treasures):
+        """
+        Main game loop that manages the rooms and player decisions.
+
+        Flow:
+            - There are 5 rooms (1..5)
+            - Inside each room, use a while loop for player actions:
+                1. Search room
+                2. Move to next room
+                3. Check status
+                4. Quit
+            - Health below 1 ends the game early.
+        """
+        room_count = 5
+        room_number = 1
+
+        print(f"\nWelcome, {player['name']}! Your adventure begins...")
+
+       
+        while room_number <= room_count:
+            
+            if player["health"] <= 0:
+                print("\nYour health has reached 0.")
+                break
+
+            
+            while True:
+                display_options(room_number)
+                choice = input("Enter choice (1-4): ").strip()
+
+                if choice == "1":
+                    # search
+                    search_room(player, treasures)
+                    if player["health"] <= 0:
+                        break  
+                elif choice == "2":
+                    # move to next room
+                    print(f"\nBreak through to the next room...")
+                    room_number += 1
+                    break  
+                elif choice == "3":
+                    # check status
+                    check_status(player)
+                elif choice == "4":
+                    # quit
+                    print("\nYou decided to admit defeat...")
+                    end_game(player, treasures)
+                    return
+                else:
+                    print("Please enter 1, 2, 3, or 4.")
+
+            
+            if player["health"] <= 0:
+                break
+
+        # Finished game
+        if room_number > room_count:
+            print("\nSo, it ends!.......")
+        end_game(player, treasures)
+
 
     # -----------------------------------------------------
     # GAME ENTRY POINT (Leave this section unchanged)
     # -----------------------------------------------------
-    player = setup_player()
-    treasures = create_treasures()
-    run_game_loop(player, treasures)
+player = setup_player()
+treasures = create_treasures()
+run_game_loop(player, treasures)
 
 if __name__ == "__main__":
     main()
