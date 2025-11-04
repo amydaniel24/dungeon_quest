@@ -1,3 +1,4 @@
+
 import random
 
 def main():
@@ -104,7 +105,7 @@ def main():
         # TODO: Update player dictionary accordingly
         # TODO: Print messages describing what happened
 
-    def search_room(player, treasures):
+    
 
         outcome = random.choice(["treasure", "trap"])
 
@@ -161,7 +162,7 @@ def main():
         # TODO: Print final health, items, and total value
         # TODO: End with a message like "Game Over! Thanks for playing."
 
-    def end_game(player, treasures):
+    
        
         total_value = sum(treasures.get(item, 0) for item in player["inventory"])
 
@@ -204,7 +205,7 @@ def main():
         # TODO: Break or return appropriately when player quits or dies
         # TODO: Call end_game() after all rooms are explored
 
-    def run_game_loop(player, treasures):
+    
         """
         Main game loop that manages the rooms and player decisions.
 
@@ -268,10 +269,10 @@ def main():
     # -----------------------------------------------------
     # GAME ENTRY POINT (Leave this section unchanged)
     # -----------------------------------------------------
-    def main():
-        player = setup_player()
-        treasures = create_treasures()
-        run_game_loop(player, treasures)
+   
+    player = setup_player()
+    treasures = create_treasures()
+    run_game_loop(player, treasures)
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         main()
