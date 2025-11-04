@@ -103,11 +103,16 @@ def main():
         # TODO: Write an if/else to handle treasure vs trap outcomes
         # TODO: Update player dictionary accordingly
         # TODO: Print messages describing what happened
-if outcome == "treasure":
+
+def search_room(player, treasures):
+
+    outcome = random.choice(["treasure", "trap"])
+
+    if outcome == "treasure":
             found = random.choice(list(treasures.keys()))
             player["inventory"].append(found)
             print(f"\nYou found a **{found}**! (+{treasures[found]} value)")
-else:
+    else:
             # trap
             player["health"] = max(0, player["health"] - 2)
             print("\nOh no! You found a trap and lost 2 health!")
