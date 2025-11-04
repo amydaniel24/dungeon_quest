@@ -103,9 +103,18 @@ def main():
         # TODO: Write an if/else to handle treasure vs trap outcomes
         # TODO: Update player dictionary accordingly
         # TODO: Print messages describing what happened
+if outcome == "treasure":
+            found = random.choice(list(treasures.keys()))
+            player["inventory"].append(found)
+            print(f"\nYou found a **{found}**! (+{treasures[found]} value)")
+else:
+            # trap
+            player["health"] = max(0, player["health"] - 2)
+            print("\nOh no! You found a trap and lost 2 health!")
+            if player["health"] == 0:
+                print("Ouch, I hope no one's watching you play . . .")
 
-
-    def check_status(player):
+def check_status(player):
         """
         Displays the player’s current health and inventory.
 
