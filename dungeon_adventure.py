@@ -74,7 +74,13 @@ def main():
             4. Quit the game
         """
         # TODO: Print the room number and the 4 menu options listed above
-
+    print("\n" + "-" * 40)
+    print(f"You are in room {room_number}.")
+    print("What would you like to do?")
+    print("1. Search for treasure")
+    print("2. Move to next room")
+    print("3. Check health and inventory")
+    print("4. Quit the game")
 
     def search_room(player, treasures):
         """
