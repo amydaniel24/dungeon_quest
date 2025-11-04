@@ -270,8 +270,8 @@ def main():
     # -----------------------------------------------------
     def main():
         player = setup_player()
-    treasures = create_treasures()
-    run_game_loop(player, treasures)
+        treasures = create_treasures()
+        run_game_loop(player, treasures)
 
     if __name__ == "__main__":
         main()
